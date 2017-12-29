@@ -24,15 +24,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-    <?php debug($model); ?>
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            //'parent_id',
+//            'parent_id',
             [
                 'attribute' => 'parent_id',
-                'value' => $model->category->name ? $model->category->name : 'Самостійна категорія',
+                'value' => $model->category->name ? $model->category->name : 'Самостоятельная категория',
             ],
             'name',
             'keywords',
