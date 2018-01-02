@@ -118,7 +118,6 @@ use yii\helpers\Html;
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-<!--                                    <img src="/images/home/product1.jpg" alt="" />-->
                                     <?= Html::img("@web/images/products/{$hit->img}", ['alt' =>$hit->name])?>
                                     <h2>$<?= $hit->price?></h2>
                                     <p><a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $hit->id])?>"><?= $hit->name?></a></p>
@@ -147,6 +146,10 @@ use yii\helpers\Html;
                             </div>
                         </div>
                     </div>
+                        <?php $counter++; ?>
+                        <?php if ($counter  % 3 ==0): ?>
+                            <div class="clearfix"></div>
+                        <?php endif; ?>
                     <?php endforeach; ?>
 
                 </div><!--features_items-->
